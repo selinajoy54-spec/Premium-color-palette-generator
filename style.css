@@ -1,0 +1,152 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff6b6b,#6c5ce7,#00cec9,#fdcb6e);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    text-align:center;
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:white;
+    margin-bottom:10px;
+    font-size:2.8rem;
+}
+
+.subtitle{
+    color:white;
+    opacity:0.9;
+    margin-bottom:25px;
+}
+
+#generateBtn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff7675,#6c5ce7);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    margin-bottom:30px;
+}
+
+#generateBtn:hover{
+    transform:scale(1.05);
+}
+
+.palette{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    overflow-x:auto;
+}
+
+.palette::-webkit-scrollbar{
+    height:8px;
+}
+
+.palette::-webkit-scrollbar-thumb{
+    background:white;
+    border-radius:10px;
+}
+
+.color-card{
+    min-width:180px;
+    height:420px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    transition:0.4s;
+    flex-shrink:0;
+}
+
+.color-card:hover{
+    transform:translateY(-10px);
+}
+
+.color-info{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(10px);
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+.color-code{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.copy-text{
+    font-size:13px;
+    opacity:0.8;
+}
+
+.toast{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    background:#111;
+    color:white;
+    padding:12px 22px;
+    border-radius:10px;
+    opacity:0;
+    transition:0.4s;
+}
+
+.toast.show{
+    opacity:1;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    .color-card{
+        min-width:140px;
+        height:320px;
+    }
+
+}
